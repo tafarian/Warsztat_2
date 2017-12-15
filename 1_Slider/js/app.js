@@ -10,8 +10,30 @@ document.addEventListener("DOMContentLoaded", function(){
         return arrList
     }
     var imageList = getList(list);
-    var selectedImage = imageList[0];
-    console.log(selectedImage);
+    var counter = 0;
+    imageList[counter].classList.add("visible");
+
+    nextButton.addEventListener("click", function() {
+        console.log("Button next has been clicked");
+        imageList[counter].classList.remove("visible");
+        counter++;
+        if (counter >= imageList.length) {
+            counter = 0;
+        } imageList[counter].classList.add("visible");
+
+    });
+
+    prevButton.addEventListener("click", function() {
+       console.log("Button prev has been clicked");
+       imageList[counter].classList.remove("visible");
+       counter--;
+       if (counter < 0) {
+           counter = imageList.length - 1
+       } imageList[counter].classList.add("visible");
+
+    });
 
 
 });
+
+// Punkt 7. Slider po wyjechaniu poza tablice z liczbami naszych obrazków, przestaje je wyświetlać //
