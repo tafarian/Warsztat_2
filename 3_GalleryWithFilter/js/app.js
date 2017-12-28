@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
        console.log(input.value);
        input.value="";
        for(var i=0; i<images.length; i++) {
-           images[i].classList.add("invisible");
+           images[i].classList.remove("invisible");
            console.log(images[i].dataset);
            if (images[i].dataset.tag.indexOf(input.value) >= 0) {
-               images[i].classList.remove("invisible");
+               images[i].classList.add("invisible");
            }
        }
     });
